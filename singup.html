@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>EXERCISE FORMS</title>
+        <link rel="stylesheet" type="text/css" href="offline-theme-default.css">
+		<link rel="stylesheet" href="offline-language-english.min.css" />
+		<script src="offline.min.js"></script>
+	</head>
+	<body>
+        
+  	<div style="margin:100px auto;width:700px;font-weight:bold;line-height:30px;background:#e5e5e5;padding:10px;"> 
+	Please turn off your wifi connection or unplug your ethernet cable and wait for 2 seconds 
+	</div>
+	
+        <script type="text/javascript">
+            Offline.options = {
+        // to check the connection status immediatly on page load.
+            checkOnLoad: true,
+        // to monitor AJAX requests to check connection.
+            interceptRequests: true,
+        // to automatically retest periodically when the connection is down (set to false to disable).
+            reconnect: {
+        // delay time in seconds to wait before rechecking.
+            initialDelay: 2,
+        // wait time in seconds between retries.
+            delay: 2
+            },
+        // to store and attempt to remake requests which failed while the connection was down.
+            requests: true
+            };
+        </script>
+        
+        <!--I take sometime to make this form because I search for more up to date techniques in HTML5, so now lets code-->
+        <!--Name attribute is deprecated use id instead-->
+        <form accept-charset="UTF-8" method="get" id="f-assessment" action="thanks-user.html">
+            <h1>Sing up page</h1>
+            <p>The asterisk <em>(*)</em> references to do not leave a empty label</p>
+        <!--Divs acting as container for just insert a asterisk to indicates a required field-->
+            <!--User first name-->
+                <div class="usrFirstName">
+                    <label for="userFName-id">First Name:</label>
+                    <input id="userFName-id" type="text" name="userFName-id" placeholder="First name" required> <span style="color:red">*</span>
+                </div> 
+            <!--User last name-->
+                <div class="usrLastName">
+                    <label for="userLName-id">Last Name:</label>
+                    <input id="userLName-id" type="text" name="userLName-id" placeholder="Last name" required> <span style="color:red">*</span>
+                </div> 
+            <!--User email-->
+                <div class="usrEmail">
+                    <label for="userEmail-id">Email Address:</label>
+                    <input id="userEmail-id" type="email" name="userEmail-id" placeholder="example@valide.domain.com" required> <span style="color:red">*</span>
+                </div> 
+            <!--User password-->
+               <div class="usrPassword">
+                    <label for="userPassword-id">Password:</label>
+                    <input id="userPassword-id" type="password" name="userPassword-id" placeholder="******" required> <span style="color:red">*</span>
+                </div>
+            <!--User born date-->
+                <div class="usrBornDate">
+                    <label for="userBornDate-id">When you are born?</label>
+                    <input id="userBornDate-id" type="date"  name="userBornDate-id" required> <span style="color:red">*</span>
+                </div>
+            <!--User bank information-->
+                <div>
+                <label>Do you have any programming experience?</label>
+                    <select name="usrKnowledgeInfo" >
+                        <option value="Yes">Yes, I have</option>
+                        <option value="No">No, I haven't</option>
+                    </select>
+                </div>    
+            <p><input type="submit" name="Submit" value="Submit"></p>
+        </form>
+	</body>
+</html>
