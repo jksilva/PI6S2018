@@ -1,6 +1,11 @@
-import requests
+__author__ = 'Jackson Silva'
 
-__author__ = "Jackson Silva"
 
-r = requests.get("http://google.com")
-print(r.content)
+def age_program():
+    user_age = input("Enter your age: ")
+    age_seconds = int(user_age) * 365 * 24 * 60 * 60
+    print("Your age in seconds is {}".format(age_seconds))
+
+
+age_program()
+
