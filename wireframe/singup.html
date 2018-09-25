@@ -8,11 +8,6 @@
 		<script src="offline.min.js"></script>
 	</head>
 	<body>
-        
-  	<div style="margin:100px auto;width:700px;font-weight:bold;line-height:30px;background:#e5e5e5;padding:10px;"> 
-	Please turn off your wifi connection or unplug your ethernet cable and wait for 2 seconds 
-	</div>
-	
         <script type="text/javascript">
             Offline.options = {
         // to check the connection status immediatly on page load.
@@ -33,7 +28,7 @@
         
         <!--I take sometime to make this form because I search for more up to date techniques in HTML5, so now lets code-->
         <!--Name attribute is deprecated use id instead-->
-        <form accept-charset="UTF-8" method="get" id="f-assessment" action="thanks-user.html">
+        <form accept-charset="UTF-8" method="post" id="singupForm" action="thanks-user.html">
             <h1>Sing up page</h1>
             <p>The asterisk <em>(*)</em> references to do not leave a empty label</p>
         <!--Divs acting as container for just insert a asterisk to indicates a required field-->
@@ -62,7 +57,7 @@
                     <label for="userBornDate-id">When you are born?</label>
                     <input id="userBornDate-id" type="date"  name="userBornDate-id" required> <span style="color:red">*</span>
                 </div>
-            <!--User bank information-->
+            <!--User knowledge level-->
                 <div>
                 <label>Do you have any programming experience?</label>
                     <select name="usrKnowledgeInfo" >
