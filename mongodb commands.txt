@@ -1,0 +1,12 @@
+mongo "mongodb+srv://usuarios-batif.mongodb.net/test" --username silvajk
+
+show dbs 
+	mostra os dbs existente
+use nomedobanco
+	criar caso nao exista e seleciona o banco
+show collections
+	mostra o conteudo do banco
+db.students.insert({"name":"j","mark": 100})
+	insere dados no db
+db.students.find({})
+	busca valores no banco
