@@ -1,4 +1,5 @@
 from database import Database
+from menu import Menu
 from models.blog import Blog
 #from models.post import Post
 
@@ -6,17 +7,21 @@ __author__ = 'silvajk'
 
 Database.initialize()
 
-blog = Blog(author="jackson",
-            title="sample title",
-            description="sample description")
+menu = Menu()
 
-blog.new_post()
+menu.run_menu()
 
-blog.save_to_mongo()
+#blog = Blog(author="jackson",
+#            title="sample title",
+#            description="sample description")
 
-from_database = Blog.from_mongo(blog.id)
+#blog.new_post()
 
-print(blog.get_posts())
+#log.save_to_mongo()
+
+#from_database = Blog.from_mongo(blog.id)
+
+#print(blog.get_posts())
 
 #posts = Post.from_blog('123')
 #for post in posts:
