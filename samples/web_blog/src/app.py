@@ -4,7 +4,7 @@ from src.common.database import Database
 from src.models.user import User
 
 app = Flask(__name__)
-
+app.secret_key = "test"
 
 # add a end point
 @app.route('/')
@@ -22,6 +22,8 @@ def login_user():
 
     if User.login_valid(email, password):
         User.login(email)
+    else:
+        session['email'] = None
 
     return render_template("profile.html", email=session['email'])
 
