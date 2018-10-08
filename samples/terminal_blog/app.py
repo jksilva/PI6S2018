@@ -1,14 +1,32 @@
 from database import Database
-from models.post import Post
+from menu import Menu
+from models.blog import Blog
+#from models.post import Post
 
 __author__ = 'silvajk'
 
 Database.initialize()
 
-posts = Post.from_blog('123')
-for post in posts:
-    print(post)
+menu = Menu()
 
+menu.run_menu()
+
+#blog = Blog(author="jackson",
+#            title="sample title",
+#            description="sample description")
+
+#blog.new_post()
+
+#log.save_to_mongo()
+
+#from_database = Blog.from_mongo(blog.id)
+
+#print(blog.get_posts())
+
+#posts = Post.from_blog('123')
+#for post in posts:
+#    print(post)
+#-----
 #post = Post.from_mongo('6ab24a32e4564ae29dc5918c152af66b')
 
 #print(post)
