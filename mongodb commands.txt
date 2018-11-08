@@ -1,0 +1,24 @@
+mongo "mongodb+srv://usuarios-batif.mongodb.net/test" --username silvajk
+
+show dbs 
+	mostra os dbs existente
+use nomedobanco
+	criar caso nao exista e seleciona o banco
+show collections
+	mostra o conteudo do banco
+db.students.insert({"name":"j","mark": 100})
+	insere dados no db
+db.students.find({})
+	busca valores no banco
+db.students.remove({"item": "Chair"})
+
+Relembrando os operadores de update:
+
+    $set: muda o valor de um campo;
+    $unset: remove um campo do documento;
+    $rename: muda o nome de um campo do documento;
+    $inc: quando um campo numérico precisa ser incrementado (ou decrementado, usando um valor negativo);
+    $mul: quando um campo numérico precisa ser multiplicado;
+
+
+https://blog.umbler.com/br/boas-praticas-com-mongodb/
