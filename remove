@@ -1,0 +1,5 @@
+function remove(id){
+document.getElementById(id).remove();
+}
+
+ondblclick="remove(this.id)"
