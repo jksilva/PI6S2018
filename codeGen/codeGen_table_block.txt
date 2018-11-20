@@ -1,0 +1,32 @@
+legenda:
+§ -> sera subistituido pelo parametro do usuario, se for
+texto ele ira acrescentar "", se for uma variavel nao.
+
+¢ -> indice de criação sendo o primeiro 1, e assim 
+consecutiva
+
+-------- Output on console (cursor on next line)--------
+{
+	System.out.println(§);   
+}
+--------------------------------------------------------
+
+-------- Output on console (cursor in front of) --------
+{
+	System.out.print(§);
+}
+--------------------------------------------------------
+
+-------- Write with BufferedWriter ---------------------
+public void write¢(String §¢)
+	throws IOException {
+	BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+	writer.write(§¢);
+	
+	writer.close();
+}
+--------------------------------------------------------
+
+-------- append a String to the existing file ----------
+
+
