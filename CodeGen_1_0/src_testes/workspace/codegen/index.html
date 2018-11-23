@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <link href="./css/normalize.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="./css/ionicons.min.css" />
+        <link href="./css/style.css" rel="stylesheet" type="text/css">
+        <script src="./script.js"></script>
+
+</head>
+<body>
+    <header>
+        
+            <nav class="top-nav border-all">
+                    <div class="row border-all">
+                <div class="logo"> &#60; &#47; &#62; codeGen </div>
+                
+                <ul class="top-menu clearfix">
+                    <li><a href="#"><i class="ion-ios-plus-outline"></i>&nbsp; New</a></li>
+
+                    <li><a href="#"><i class="ion-ios-folder-outline"></i>&nbsp; Open</a></li>
+
+                    <li><a href="#"><i class="ion-record"></i>&nbsp; Save</a></li>
+
+                    <li><a href="#"><i class="ion-code-working"></i>&nbsp;Gen</a></li>
+
+                    <li><a href="#"><i class="ion-help-buoy"></i>&nbsp;Help</a></li>
+
+                    <li><a href="#"><i class="ion-ios-cloud-upload-outline"></i>&nbsp;Import</a></li>
+
+                    <li><a href="#"><i class="ion-android-exit"></i>&nbsp; Exit</a></li>
+
+                </ul>
+            </div>
+            </nav>
+    </header>
+    <section class="corpo clearfix">
+        <div class="row">
+            <div class="menu">
+                <ul>
+                        <li draggable="true" id="f1" ondragstart="drag(event)">Function 1</li>
+                        <li draggable="true" id="f2" ondragstart="drag(event)">Function 2</li>
+                        <li draggable="true" id="f3" ondragstart="drag(event)">Function 3</li>
+                        <li draggable="true" id="f4" ondragstart="drag(event)">Function 4</li>
+                        <li draggable="true" id="f5" ondragstart="drag(event)">Function 5</li>
+                        <li draggable="true" id="f6" ondragstart="drag(event)">Function 6</li>
+                </ul>
+
+            </div>
+            <div class="work-area">
+                <div class="project">
+                    <div class="project-header">
+                        <input type="text" placeholder="Your project">
+                    </div>
+                    <div class="drop-area"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <p style="color:#fff">teste</p>
+
+                    </div>
+                            
+                </div>
+            </div>
+            <div class="popup-edit clearfix" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    WHYYYYYYY??????
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        All rights reserved! Fuck you!
+    </footer>
+
+</body>
+</html>
