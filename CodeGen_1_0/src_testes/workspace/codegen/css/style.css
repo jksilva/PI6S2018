@@ -156,7 +156,7 @@ ul{
 
 
 .project div:first-child input{
-    border: none;
+   border: none;
    border-bottom: #a498da solid 1px;
    width: 75%;
    margin-bottom: 10px;
@@ -168,7 +168,7 @@ ul{
 .drop-area{
     margin-top: 0;
     width: 100%;
-    height: 80%;
+    height: 100px;
     text-align: center;
     background-color: #fff
 }
@@ -176,7 +176,7 @@ ul{
 .drop-area li{
     display: block;
     width: 75%;
-    line-height: 140%;
+		line-height: 140%;
     border: #333 dashed 1px;
     padding: 5px 10px;
     margin: 5px 10px 20px 30px;
