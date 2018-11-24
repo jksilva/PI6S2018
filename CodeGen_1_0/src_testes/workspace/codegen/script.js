@@ -17,14 +17,26 @@ function drop(ev) {
       ev.preventDefault();
       var data = ev.dataTransfer.getData("text");
       ev.target.appendChild(document.getElementById(data).cloneNode(true));
+  }else  {
+
+
   }
-
-
-    console.log("BooBoo");
+  console.log(ev.target.className);
 }
 
   function findAllBtn(){
   var blocks = document.querySelectorAll(".drop-area");
   console.log(blocks[0].childElementCount);
   return blocks;
+}
+
+function drop2(ev){
+  if(ev.target.className == "") {
+    ev.target.remove(ev);
+    console.log('teste');
+  }else {
+    console.log('else condition');
+  }
+  console.log(ev.target);
+
 }

@@ -42,7 +42,7 @@
         <div class="row">
             <div class="menu">
                 <ul>
-                        <li draggable="true" id="f1" ondragstart="drag(event)">Function 1</li>
+                        <li draggable="true" id="f1" ondragstart="drag(event)" ondrop="drop2(event)">Function 1</li>
                         <li draggable="true" id="f2" ondragstart="drag(event)">Function 2</li>
                         <li draggable="true" id="f3" ondragstart="drag(event)">Function 3</li>
                         <li draggable="true" id="f4" ondragstart="drag(event)">Function 4</li>
@@ -51,12 +51,12 @@
                 </ul>
 
             </div>
-            <div class="work-area">
+            <div class="work-area" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div class="project">
                     <div class="project-header">
                         <input type="text" placeholder="Your project">
                     </div>
-                    <div class="drop-area"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="drop-area" >
 
 
                     </div>
