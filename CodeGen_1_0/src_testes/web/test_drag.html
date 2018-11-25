@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style>
+#div1, #div2 {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.div1 {
+  float: left;
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+</style>
+<script>
+function allowDrop(ev) {
+   ev.preventDefault();
+}
+
+function drag(ev) {
+   ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+   ev.preventDefault();
+   var data = ev.dataTransfer.getData("text");
+   var nodeCopy = document.getElementById(data).cloneNode(true);
+   ev.target.appendChild(nodeCopy);
+   document.getElementById("teste").appendChild(innerHTML="<div class='div1' ondrop='drop(event)' ondragover='allowDrop(event)'></div>");
+}
+</script>
+</head>
+<body>
+<div id="teste">
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+  <img id="drag1" src="logo2.png" draggable="true"
+  ondragstart="drag(event)" width="336" height="69">
+</div>
+</body>
+</html>

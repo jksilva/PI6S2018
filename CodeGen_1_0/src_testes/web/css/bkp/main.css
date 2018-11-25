@@ -1,0 +1,150 @@
+body{
+	background:#ececec;
+	font-size:87.5%;
+	font-family: 'Open Sans', sans-serif;
+	color:#666666;
+	line-height:1.7em;
+	text-align:left;
+}
+
+#container{
+	margin:0 auto;
+	width:95%;
+	overflow:auto;
+	clear:both;
+
+}
+
+.main-header img#logo{
+	margin:5px 0;
+	width:45%;
+}
+
+#content{
+	overflow:auto;
+	width:70%;
+	float:left;
+}
+
+#right-sidebar{
+	width:20%;
+	float:left;
+}
+
+#main-view{
+	width:40%;
+	float:left;
+}
+
+#left-sidebar{
+	width:40%;
+	float:left;
+
+}
+
+
+.clr{
+	clear:both;
+}
+
+#header-blocks{
+	width:100%;
+	background-color:#5D1983;
+	color:#FFFFFF;
+	text-align: center;
+
+	padding:2px;
+	border-radius: 5px;
+}
+
+.main-header .main-nav{
+	background: #976dd0;
+	margin-bottom: 5px;
+	color:#FFFFFF;
+	border: 1px solid #5D1983;
+	border-radius: 5px;
+
+}
+
+.main-header .main-nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+
+
+
+}
+.main-header .main-nav li{
+	color: #FFFFFF;
+	display: inline;
+	float: left;
+
+}
+
+.main-header .main-nav li a i{
+	color: #FFFFFF;
+	display: inline-block;
+
+
+}
+
+.main-header .main-nav li a {
+	color: #FFFFFF;
+	display: inline-block;
+	padding: 10px 20px;
+	height: 40px;
+}
+
+.main-header .main-nav li a:hover, .main-header .main-nav li a .active{
+	background: #7614C8;
+	text-align: bottom;
+	height:40px;
+	border-radius: 5px;
+}
+h4{
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+.targertB{
+	margin-left: 0;
+	margin-top: 20px;
+	margin-right: 20px;
+	border-radius: 5px;
+	height: 40px;
+	border: 1px dashed #5D1983;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.targertB button{
+	margin-left: 0;
+
+
+	border-radius: 5px;
+	height: 40px;
+	border: 1px dashed #5D1983;
+	
+	margin-bottom: 20px;
+}
+
+#mydiv {
+    position: absolute;
+    z-index: 9;
+		width: 20%;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+
+}
+
+#mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+}
+#inp1{
+	margin-top: 10px;
+}
