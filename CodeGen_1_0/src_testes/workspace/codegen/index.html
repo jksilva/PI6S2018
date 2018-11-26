@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
         <link href="./css/normalize.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
         <link type="text/css" rel="stylesheet" href="./css/ionicons.min.css" />
         <link href="./css/style.css" rel="stylesheet" type="text/css">
@@ -39,22 +40,22 @@
             </nav>
     </header>
     <section class="corpo clearfix">
-        <div class="row">
+        <div id="hidemenu" class="row">
             <div class="menu">
                 <ul>
-                        <li draggable="true" id="f1" ondragstart="drag(event)" ondrop="drop2(event)">Function 1</li>
-                        <li draggable="true" id="f2" ondragstart="drag(event)">Function 2</li>
-                        <li draggable="true" id="f3" ondragstart="drag(event)">Function 3</li>
-                        <li draggable="true" id="f4" ondragstart="drag(event)">Function 4</li>
-                        <li draggable="true" id="f5" ondragstart="drag(event)">Function 5</li>
-                        <li draggable="true" id="f6" ondragstart="drag(event)">Function 6</li>
+                        <li draggable="true" id="f1" ondragstart="drag(event)" onclick="openNav(event)">ReadFile-FileReader</li>
+                        <li draggable="true" id="f2" ondragstart="drag(event)" onclick="openNav(event)">CreateFile-BufferedWriter</li>
+                        <li draggable="true" id="f3" ondragstart="drag(event)" onclick="openNav(event)">read-web-page</li>
+                        <li draggable="true" id="f4" ondragstart="drag(event)" onclick="openNav(event)">for-loop</li>
+                        <li draggable="true" id="f5" ondragstart="drag(event)" onclick="openNav(event)">outPut-console</li>
+                        <li draggable="true" id="f6" ondragstart="drag(event)" onclick="openNav(event)">Scanner-input</li>
                 </ul>
 
             </div>
             <div class="work-area" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <div class="project">
                     <div class="project-header">
-                        <input type="text" placeholder="Your project">
+                        <input type="text" class="form-control"  placeholder="Your project">
                     </div>
                     <div class="drop-area" >
 
@@ -63,8 +64,10 @@
 
                 </div>
             </div>
-            <div class="popup-edit clearfix" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    WHYYYYYYY??????
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+              <a onclick="deleteOne(event)" href="#">delete</a>
             </div>
         </div>
 

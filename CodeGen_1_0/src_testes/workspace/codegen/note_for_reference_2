@@ -1,0 +1,33 @@
+npm install mongodb
+
+const { MongoClient, ObjectID } = require('mongodb');
+
+MongoClient.connect(
+	'mongodb://localhost:27017/TodoApp',
+	(err, client) => {
+		if (err) {
+			return console.log('Unable to conenct to MongoDB Server');
+		}
+		console.log('Connected to MongoDB server');
+		const db = client.db('TodoApp');
+		db.collection('Users').insertOne(
+			{
+				name: 'William',
+				age: 29,
+				location: 'Hortolandia'
+			},
+			(err, result) => {
+				if (err) {
+					return console.log('Unable to insert');
+				}
+				console.log(JSON.stringify(result.ops, undefined, 2));
+				console.log(result.ops[0]._id.getTimestamp());
+			}
+		);
+		client.close();
+	}
+);
+
+
+//http://mongodb.github.io/node-mongodb-native/3.1/api/Db.html#collection
+//https://docs.mongodb.com/manual/reference/operator/update/
