@@ -4,8 +4,9 @@
  */
 
 // Dependecies
-var MongoClient = require('mongodb').MongoClient;
+
 var helpers = require('./helpers');
+var MongoClient = require('mongodb').MongoClient;
 
 // Cointainer for the module (to be exported)
 var lib ={};
@@ -29,18 +30,17 @@ lib.create = function(data,callback){
 
 
 // find from mongo
-lib.read = function(data,callback){
+lib.find = function(collection,data,callback){
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("test");
-    dbo.collection("blocks").findOne({data}, function(err, result) {
+    dbo.collection(collection).findOne({data}, function(err, result) {
       if (err) throw err;
       console.log(result.name);
       db.close();
     });
   });
-};
-
+}
 // Update from mongo
 lib.update = function (dir,file,data,callback) {
 
