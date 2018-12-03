@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="fr-fr">
 
     <head>
         <meta charset="UTF-8">
-        <title> HTML Template </title>
+        <title>codeGen Page d'accueil</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
@@ -107,10 +107,7 @@
                 width: 100%;
             }
 
-            
-        
-            #map { position: sticky; width: 300px; height: 300px;}
-
+            #map { position: sticky; top:0;  bottom:0; right:0; left:0; width: 300px; height: 300px;}
 
         </style>
     </head>
@@ -131,13 +128,13 @@
             <!-- Navbar content in collapse items -->
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div id="divPricing" class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="#">Pricing</a>
+                    <a class="nav-item nav-link" href="#">Politique de prix</a>
                 </div>
                 <div id="divLogin" class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="login.html">Enter</a>
+                    <a class="nav-item nav-link" href="login.html">Entrer</a>
                 </div>
                 <div id="divRegister" class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="register.html">Create an account</a>
+                    <a class="nav-item nav-link" href="register.html">Créer un compte</a>
                 </div>
             </div>
         </nav>
@@ -163,8 +160,8 @@
                             <div class="mask rgba-black-light"></div>
                         </div>
                         <div class="carousel-caption">
-                            <h3 class="h3-responsive">Light mask</h3>
-                            <p>First text</p>
+                            <h3 class="h3-responsive">Masque Lumière</h3>
+                            <p>Premier texte</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -174,8 +171,8 @@
                             <div class="mask rgba-black-strong"></div>
                         </div>
                         <div class="carousel-caption">
-                            <h3 class="h3-responsive">Strong mask</h3>
-                            <p>Secondary text</p>
+                            <h3 class="h3-responsive">Masque fort</h3>
+                            <p>Deuxième texte</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -185,8 +182,8 @@
                             <div class="mask rgba-black-slight"></div>
                         </div>
                         <div class="carousel-caption">
-                            <h3 class="h3-responsive">Slight mask</h3>
-                            <p>Third text</p>
+                            <h3 class="h3-responsive">Masque Léger</h3>
+                            <p>Troisième texte</p>
                         </div>
                     </div>
                 </div>
@@ -194,11 +191,11 @@
                 <!--Controls-->
                 <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only">Précédent</span>
                 </a>
                 <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">Suivant</span>
                 </a>
                 <!--/.Controls-->
             </div>
@@ -212,13 +209,13 @@
         <div class="container" id="divJumbotron">
             <div class="jumbotron">
                 <div class="grid-3">
-                    <div class="column00">
-                        <h3>Whats the purpose?</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. fringilla velit quis, porta erat. Donec blandit metus ut arcu iaculis iaculis. Cras nec dolor fringilla justo ullamcorper auctor. Aliquam eget pretium velit. Morbi urna justo, pulvinar id lobortis in, aliquet placerat orci.</p>
+                    <div class=" container column00">
+                        <h3>Quel est notre objectif?</h3>
+                        <p>Notre objectif est de fournir un outil en ligne aux étudiants sans expérience professionnelle ou aux équipes de projet pour développer des logiciels via une interface graphique conviviale avec des fonctions prédéfinies et des paramètres adaptables. Une fois la séquence d'exécution de la tâche décrite, vous pouvez facilement exporter le code source de votre programme.</p>
                         <br>
                     </div>
-                    <div class="column01">
-                        <h3>We are here</h3>
+                    <div class="container column01">
+                        <h3>Où nous sommes?</h3>
                         <div id="map"></div>
                         <script>
                             var map = L.map("map").setView([-23.08456803, -47.20129967], 16);
@@ -227,12 +224,14 @@
                         </script>
                         <br>
                     </div>
-                    <div class="column02">
-                        <h3>Check our videos</h3>
-                        <p>Quisque convallis pharetra tempor. Donec id pretium leo.</p>
+                    <div class=" container column02">
+                        <h3>Consultez notre galerie!</h3>
+                        <p>Nous préparons des vidéos pour présenter vos objectifs à codeGen.</p>
                         <ul>
-                            <li><a href="#">Apresentação em inglês</a></li>
-                            <li><a href="#">Tutorial</a></li>
+                            <li><a href="#">Exposé en anglais.</a></li>
+                            <li><a href="#">Tutoriel - Ouvrir et lire un fichier texte.</a></li>
+                            <li><a href="#">Tutoriel - Manipulation de bases de données.</a></li>
+                            <li><a href="#">Tutoriel - De base GUI.</a></li>
                         </ul>
                         <br>
                     </div>
@@ -247,20 +246,20 @@
         <footer id="sticky">
             <!-- First column inside a Nav -->
             <div class="container siteNav">
-                <nav><span style="border-bottom:2px solid">Your status connection</span>
+                <nav><span style="border-bottom:2px solid">Votre statut de connexion actuel</span>
                     <div id="demo"></div>
                     <script>
                         var txt = "";
-                        //Check name of user browser
-                        txt += "<p>Your Browser : " + navigator.appCodeName + " " + navigator.appName + "</p>";
-                        //Check Browser version
-                        txt += "<p>Browser Version: " + navigator.appVersion + "</p>";
-                        //Check if user allow cookies
-                        txt += "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
                         //Check if browser is online
-                        txt += "<p>Browser Online: " + navigator.onLine + "</p>";
+                        txt += "<p>En ligne: " + navigator.onLine + "</p>";
+                        //Check name of user browser
+                        txt += "<p>Ton navigateur: " + navigator.appCodeName + " " + navigator.appName + "</p>";
+                        //Check Browser version
+                        txt += "<p>Version du navigateur: " + navigator.appVersion + "</p>";
+                        //Check if user allow cookies
+                        txt += "<p>Cookies activés? " + navigator.cookieEnabled + "</p>";
                         //Check if is windows, Mac or a Linux
-                        txt += "<p>Platform: " + navigator.platform + "</p>";
+                        txt += "<p>Plateforme: " + navigator.platform + "</p>";
                         document.getElementById("demo").innerHTML = txt;
                     </script>
                 </nav>
@@ -268,17 +267,17 @@
             <!-- Second Column -->
             <div class="container contact">
                 <h4>©codeGen 2018</h4>
-                <a href="mailto: comercialcodeGen@gmail.com">Forneça seu feedback!</a>
+                <a href="mailto: comercialcodeGen@gmail.com">Donnez-nous un retour!</a>
                 <br><!-- jump line -->
-                <a href="#">Licença e Termos de Uso</a>
+                <a href="#">Licence et conditions d'utilisation</a>
                 <br><!-- jump line -->
-                <a href="#">Compartilhe seu código</a>
+                <a href="#">Partagez votre code!</a>
                 <br><!-- jump line -->
             </div>
             <!-- Third column -->
             <div class="container cta">
-                <h4>Leia a documentação</h4>
-                <button>Clique aqui!</button>
+                <h4>Découvrez les docs</h4>
+                <button>Cliquez ici!</button>
             </div>
         </footer>
 

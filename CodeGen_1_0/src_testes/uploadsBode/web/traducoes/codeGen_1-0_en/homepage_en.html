@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en-us">
 
     <head>
         <meta charset="UTF-8">
-        <title> HTML Template </title>
+        <title>codeGen Homepage</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
@@ -107,10 +107,7 @@
                 width: 100%;
             }
 
-            
-        
-            #map { position: sticky; width: 300px; height: 300px;}
-
+            #map { position: sticky; top:0;  bottom:0; right:0; left:0; width: 300px; height: 300px;}
 
         </style>
     </head>
@@ -163,7 +160,7 @@
                             <div class="mask rgba-black-light"></div>
                         </div>
                         <div class="carousel-caption">
-                            <h3 class="h3-responsive">Light mask</h3>
+                            <h3 class="h3-responsive">Light Mask</h3>
                             <p>First text</p>
                         </div>
                     </div>
@@ -174,8 +171,8 @@
                             <div class="mask rgba-black-strong"></div>
                         </div>
                         <div class="carousel-caption">
-                            <h3 class="h3-responsive">Strong mask</h3>
-                            <p>Secondary text</p>
+                            <h3 class="h3-responsive">Strong Mask</h3>
+                            <p>Second text</p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -185,7 +182,7 @@
                             <div class="mask rgba-black-slight"></div>
                         </div>
                         <div class="carousel-caption">
-                            <h3 class="h3-responsive">Slight mask</h3>
+                            <h3 class="h3-responsive">Slight Mask</h3>
                             <p>Third text</p>
                         </div>
                     </div>
@@ -212,13 +209,13 @@
         <div class="container" id="divJumbotron">
             <div class="jumbotron">
                 <div class="grid-3">
-                    <div class="column00">
-                        <h3>Whats the purpose?</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. fringilla velit quis, porta erat. Donec blandit metus ut arcu iaculis iaculis. Cras nec dolor fringilla justo ullamcorper auctor. Aliquam eget pretium velit. Morbi urna justo, pulvinar id lobortis in, aliquet placerat orci.</p>
+                    <div class=" container column00">
+                        <h3>Whats our purpose?</h3>
+                        <p>Our goal is to provide an online tool that enables students with no professional experience or project teams to develop software through a graphical and user-friendly interface with predefined functions and adaptable parameters. Once the task execution sequence is outlined you can easily export the source code of your program.</p>
                         <br>
                     </div>
-                    <div class="column01">
-                        <h3>We are here</h3>
+                    <div class="container column01">
+                        <h3>Where we are?</h3>
                         <div id="map"></div>
                         <script>
                             var map = L.map("map").setView([-23.08456803, -47.20129967], 16);
@@ -227,12 +224,14 @@
                         </script>
                         <br>
                     </div>
-                    <div class="column02">
-                        <h3>Check our videos</h3>
-                        <p>Quisque convallis pharetra tempor. Donec id pretium leo.</p>
+                    <div class=" container column02">
+                        <h3>Check our gallery!</h3>
+                        <p>We prepare some videos to introduce your goals to the codeGen.</p>
                         <ul>
-                            <li><a href="#">Apresentação em inglês</a></li>
-                            <li><a href="#">Tutorial</a></li>
+                            <li><a href="#">English presentation.</a></li>
+                            <li><a href="#">Tutorial - Open and read a text file.</a></li>
+                            <li><a href="#">Tutorial - Manipulating databases.</a></li>
+                            <li><a href="#">Tutorial - Basic GUI.</a></li>
                         </ul>
                         <br>
                     </div>
@@ -247,20 +246,20 @@
         <footer id="sticky">
             <!-- First column inside a Nav -->
             <div class="container siteNav">
-                <nav><span style="border-bottom:2px solid">Your status connection</span>
+                <nav><span style="border-bottom:2px solid">Your current connection status</span>
                     <div id="demo"></div>
                     <script>
                         var txt = "";
-                        //Check name of user browser
-                        txt += "<p>Your Browser : " + navigator.appCodeName + " " + navigator.appName + "</p>";
-                        //Check Browser version
-                        txt += "<p>Browser Version: " + navigator.appVersion + "</p>";
-                        //Check if user allow cookies
-                        txt += "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
                         //Check if browser is online
-                        txt += "<p>Browser Online: " + navigator.onLine + "</p>";
+                        txt += "<p>Online: " + navigator.onLine + "</p>";
+                        //Check name of user browser
+                        txt += "<p>Your browser: " + navigator.appCodeName + " " + navigator.appName + "</p>";
+                        //Check Browser version
+                        txt += "<p>Browser version: " + navigator.appVersion + "</p>";
+                        //Check if user allow cookies
+                        txt += "<p>Cookies enabled? " + navigator.cookieEnabled + "</p>";
                         //Check if is windows, Mac or a Linux
-                        txt += "<p>Platform: " + navigator.platform + "</p>";
+                        txt += "<p>Plataform: " + navigator.platform + "</p>";
                         document.getElementById("demo").innerHTML = txt;
                     </script>
                 </nav>
@@ -268,17 +267,17 @@
             <!-- Second Column -->
             <div class="container contact">
                 <h4>©codeGen 2018</h4>
-                <a href="mailto: comercialcodeGen@gmail.com">Forneça seu feedback!</a>
+                <a href="mailto: comercialcodeGen@gmail.com">Give us a feedback!</a>
                 <br><!-- jump line -->
-                <a href="#">Licença e Termos de Uso</a>
+                <a href="#">License and Terms of Use</a>
                 <br><!-- jump line -->
-                <a href="#">Compartilhe seu código</a>
+                <a href="#">Share your code!</a>
                 <br><!-- jump line -->
             </div>
             <!-- Third column -->
             <div class="container cta">
-                <h4>Leia a documentação</h4>
-                <button>Clique aqui!</button>
+                <h4>Check out the docs</h4>
+                <button>Clicking here!</button>
             </div>
         </footer>
 
