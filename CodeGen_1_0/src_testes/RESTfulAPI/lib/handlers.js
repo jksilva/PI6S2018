@@ -6,9 +6,13 @@
 // Dependecies
 var _data = require('./data');
 var helpers = require('./helpers');
+var MongoClient = require('mongodb').MongoClient;
 
 // define the handlers
 var handlers = {};
+
+// url for connet to mongodb
+var url = "mongodb://localhost:27017/";
 
  // users
  handlers.users = function(data,callback){
@@ -25,51 +29,29 @@ var handlers = {};
 handlers._users = {};
 
 // Users - posts
-// Required data: firstName, lastName, phone, password, tosAgreement
+// Required data: fullName, emailAddress, password
 // Optional data: none
 
 handlers._users.post = function(data,callback){
   // Check that all required fieds are filled out
-  var fullName = typeof(data.payload.firstName) == 'string' && data.payload.firstName.trim().length > 0 ? data.payload.firstName.trim() : false;
-  var emailAddress = typeof(data.payload.lastName) == 'string' && data.payload.lastName.trim().length > 0 ? data.payload.lastName.trim() : false;
+  var fullName = typeof(data.payload.fullName) == 'string' && data.payload.fullName.trim().length > 0 ? data.payload.fullName.trim() : false;
+  var emailAddress = typeof(data.payload.emailAddress) == 'string' && data.payload.emailAddress.trim().length > 0 ? data.payload.emailAddress.trim() : false;
   var password = typeof(data.payload.password) == 'string' && data.payload.password.trim().length > 0 ? data.payload.password.trim() : false;
 
   if (fullName && emailAddress && password){
     // make sure that user doesnt already exist
-    _data.read('users',emailAddress,function(err,data){
-      if(err){
-        // hash the password
-        var hashedPassword = helpers.hash(password);
-        // Create the user object
-        if (hashedPassword) {
-          var userObject = {
-            'fullName': fullName,
-            'emailAddress': emailAddress,
-            'hashedPassword': hashedPassword,
-          };
-
-          // Store the user using mongodb
-          _data.create('users',emailAddress,userObject,function(err){
-            if(!err){
-              callback(200);
-            }else {
-              console.log(err);
-              callback(500,{'Error': 'Could not create the new user'});
-            }
-          });
-        }else {
-          callback(500,{'error': 'could not hash the user\'s password'});
-        }
-
-      }else {
-        // User already exists
-        callback(400,{'Error': 'A user with that number already exists'});
-      }
+    MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db("test");
+      var query = { emailAddress: emailAddress };
+      dbo.collection("users").find(query).toArray(function(err, result) {
+        if (err) throw err;
+        console.log(result);
+        db.close();
+      });
     });
-  }else {
-    callback(400,{'error':'missing required fields'});
   }
-};
+}
 // Users - get
 // Required data: phone
 // Optional data: none

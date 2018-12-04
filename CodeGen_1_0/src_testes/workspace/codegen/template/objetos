@@ -1,0 +1,46 @@
+menu lateral
+<rect style="fill:#666666;fill-opacity:0.4919786;stroke-width:0.26458332" id="rect4632" width="92.7425" height="150.74001" x="-42.979313" y="6.1564121" ry="3.0736117"></rect>
+
+barrinha cinza acima do workspace
+<rect style="fill:#b3b3b3;fill-opacity:0.4919786;stroke-width:0.26458332" id="rect4630" width="36.08139" height="6.1471996" x="11.81091" y="-35.804897" ry="3.0735996"></rect>
+
+barrinha cinza canto superior direito
+<rect style="fill:#aeb0b2;fill-opacity:1;stroke-width:0.26458332" id="rect4628" width="106.10601" height="6.4144697" x="-241.82785" y="-36.339436" ry="3.2072349"></rect>
+
+workspace draggable area
+<rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:0.90000001, 0.3;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke" id="rect4626" width="190.54367" height="20.28842" x="-241.69421" y="-25.515024" ry="0" rx="0"></rect>
+
+
+
+retangulo com o logo/nome
+<rect style="fill:#8655fc;fill-opacity:1;stroke-width:0.26575142" id="rect4604" width="60.937428" height="12.964137" x="-307.0416" y="-53.979221"></rect>
+<text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:0px;word-spacing:0px;fill:#fffffe;fill-opacity:1;stroke:none;stroke-width:0.26458332" x="-297.57651" y="-45.159328" id="text4608"><tspan sodipodi:role="line" id="tspan4606" x="-297.57651" y="-45.159328" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;font-family:monospace;-inkscape-font-specification:monospace;fill:#fffffe;fill-opacity:1;stroke-width:0.26458332">&lt;codeGen/&gt;</tspan>
+
+</text>
+
+parte onde sera colocado o menu
+<rect style="fill:#8655fc;fill-opacity:1;stroke-width:0.26458332" id="rect4610" width="11.091722" height="12.964133" x="-246.10419" y="-53.979221"></rect>
+
+corpo da navbar
+<rect style="fill:#8655fc;fill-opacity:1;stroke-width:0.27022973" id="rect4612" width="248.56065" height="12.964132" x="-235.01245" y="-53.979221"></rect>
+
+canto superior direito
+<rect style="fill:#8655fc;fill-opacity:1;stroke-width:0.26597375" id="rect4614" width="34.878658" height="12.964133" x="13.548215" y="-53.979221" ry="0" rx="0"></rect>
+
+menu lateral fundo
+<rect style="fill:#222d32;fill-opacity:0.94117647;stroke-width:0.26458332" id="rect4616" width="61.20472" height="198.31398" x="-306.96332" y="-40.883564"></rect>
+
+divisor do menu
+<rect style="fill:#aeb0b2;fill-opacity:1;stroke-width:0.26983523" id="rect4618" width="61.204712" height="17.771851" x="-307.0416" y="-41.015087"></rect>
+
+botao menu lateral
+<rect style="fill:#aeb0b2;fill-opacity:1;stroke-width:0.26516291" id="rect4622" width="61.204716" height="11.759859" x="-307.0416" y="-13.888796"></rect>
+
+fundo da area de trabalho
+<rect style="fill:#f3f8fb;fill-opacity:1;stroke-width:0.26458332" id="rect4624" width="295.33282" height="197.77943" x="-245.56961" y="-40.883015"></rect>
+
+status bar
+<rect style="fill:#00a65a;fill-opacity:1;stroke:none;stroke-width:3.94082236;stroke-miterlimit:4;stroke-dasharray:11.82246546, 3.94082186;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" id="rect5045" width="60.908913" height="5.2273731" x="-306.66751" y="157.43042"></rect>
+
+parte maior
+<rect style="fill:#3c8dbc;fill-opacity:1;stroke:none;stroke-width:0.4865897;stroke-miterlimit:4;stroke-dasharray:1.45976892, 0.48658964;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" id="rect5047" width="295.7764" height="5.1322298" x="-245.75861" y="157.4304"></rect>
