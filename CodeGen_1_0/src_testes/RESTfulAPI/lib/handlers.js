@@ -46,8 +46,31 @@ handlers._users.post = function(data,callback){
       var query = { emailAddress: emailAddress };
       dbo.collection("users").find(query).toArray(function(err, result) {
         if (err) throw err;
-        console.log(result);
+        console.log(result,' <-- verificar isso');
         db.close();
+        if (result.length==0) {
+          // if the user donsen't exist procced
+          hasedPassword = helpers.hash(password);
+            MongoClient.connect(url, function(err, db) {
+            if (err) throw err;
+            var dbo = db.db("test");
+            var myobj = { fullName: fullName, emailAddress: emailAddress, password:hasedPassword };
+            dbo.collection("users").insertOne(myobj, function(err, res) {
+              if (err) {
+                callback(500,'Internal error!');
+              }else {
+                console.log("1 document inserted");
+                db.close();
+              }
+
+            });
+          });
+          callback(200);
+        }else {
+          // if the user already exists
+          callback(409,'The user already exists');
+        }
+
       });
     });
   }

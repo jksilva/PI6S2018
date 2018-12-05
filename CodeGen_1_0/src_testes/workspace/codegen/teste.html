@@ -6,9 +6,10 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
           function performGetRequest1(){
-        axios.post('http://localhost:3000/tokens',{
-           phone:'5551234567',
-           password:'thisIsAPasswod'
+        axios.post('http://localhost:3000/users',{
+           fullName:'batata da silva',
+           emailAddress:'teste2@teste.com',
+           password:'S3nh4'
          }, {headers: {'Content-Type':'application/x-www-form-urlencoded'}})
         .then(function (response) {
           console.log(response);

@@ -30,7 +30,7 @@ lib.create = function(data,callback){
 
 
 // find from mongo
-lib.find = function(collection,data,callback){
+lib.find = function(data,collection,callback){
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("test");
