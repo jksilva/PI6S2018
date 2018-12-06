@@ -157,10 +157,10 @@ lib.insertOne = function(dbName,dbCollection,data,callback){
     if (!err) {
       var dbo = db.db(dbName);
 
-      dbo.collection(dbCollection).insertOne(data, function(err,res) {
+      dbo.collection(dbCollection).insertOne(data, function(err,result) {
         if (!err) {
-          console.log();
-        callback(false,res);
+          console.log(result.result);
+        callback(200);
         console.log('-----------');
         console.log('inserted 1');
         console.log('-----------');
