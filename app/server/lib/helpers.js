@@ -56,6 +56,62 @@ helpers.createRandomString = function(strLength){
   }
 };
 
+helpers.sendTwilioSms = function(phone,msg,callback){
+  // Validate parameters
+  phone = typeof(phone) == 'string' && phone.trim().length == 10 ? phone.trim() : false;
+  msg = typeof(msg) == 'string' && msg.trim().length > 0 && msg.trim().length <= 1600 ? msg.trim() : false;
+  if(phone && msg){
+
+    // Configure the request payload
+    var payload = {
+      'From' : config.twilio.fromPhone,
+      'To' : '+1'+phone,
+      'Body' : msg
+    };
+    var stringPayload = querystring.stringify(payload);
+
+
+    // Configure the request details
+    var requestDetails = {
+      'protocol' : 'https:',
+      'hostname' : 'api.twilio.com',
+      'method' : 'POST',
+      'path' : '/2010-04-01/Accounts/'+config.twilio.accountSid+'/Messages.json',
+      'auth' : config.twilio.accountSid+':'+config.twilio.authToken,
+      'headers' : {
+        'Content-Type' : 'application/x-www-form-urlencoded',
+        'Content-Length': Buffer.byteLength(stringPayload)
+      }
+    };
+
+    // Instantiate the request object
+    var req = https.request(requestDetails,function(res){
+        // Grab the status of the sent request
+        var status =  res.statusCode;
+        // Callback successfully if the request went through
+        if(status == 200 || status == 201){
+          callback(false);
+        } else {
+          callback('Status code returned was '+status);
+        }
+    });
+
+    // Bind to the error event so it doesn't get thrown
+    req.on('error',function(e){
+      callback(e);
+    });
+
+    // Add the payload
+    req.write(stringPayload);
+
+    // End the request
+    req.end();
+
+  } else {
+    callback('Given parameters were missing or invalid');
+  }
+};
+
 // Get the string content of a template, and use provided data for string interpolation
 helpers.getTemplate = function(templateName,data,callback){
   templateName = typeof(templateName) == 'string' && templateName.length > 0 ? templateName : false;
@@ -74,28 +130,6 @@ helpers.getTemplate = function(templateName,data,callback){
   } else {
     callback('A valid template name was not specified');
   }
-};
-
-// Take a given string and data object, and find/replace all the keys within it
-helpers.interpolate = function(str,data){
-  str = typeof(str) == 'string' && str.length > 0 ? str : '';
-  data = typeof(data) == 'object' && data !== null ? data : {};
-
-  // Add the templateGlobals to the data object, prepending their key name with "global."
-  for(var keyName in config.templateGlobals){
-     if(config.templateGlobals.hasOwnProperty(keyName)){
-       data['global.'+keyName] = config.templateGlobals[keyName]
-     }
-  }
-  // For each key in the data object, insert its value into the string at the corresponding placeholder
-  for(var key in data){
-     if(data.hasOwnProperty(key) && typeof(data[key] == 'string')){
-        var replace = data[key];
-        var find = '{'+key+'}';
-        str = str.replace(find,replace);
-     }
-  }
-  return str;
 };
 
 // Add the universal header and footer to a string, and pass provided data object to header and footer for interpolation
@@ -119,6 +153,28 @@ helpers.addUniversalTemplates = function(str,data,callback){
       callback('Could not find the header template');
     }
   });
+};
+
+// Take a given string and data object, and find/replace all the keys within it
+helpers.interpolate = function(str,data){
+  str = typeof(str) == 'string' && str.length > 0 ? str : '';
+  data = typeof(data) == 'object' && data !== null ? data : {};
+
+  // Add the templateGlobals to the data object, prepending their key name with "global."
+  for(var keyName in config.templateGlobals){
+     if(config.templateGlobals.hasOwnProperty(keyName)){
+       data['global.'+keyName] = config.templateGlobals[keyName]
+     }
+  }
+  // For each key in the data object, insert its value into the string at the corresponding placeholder
+  for(var key in data){
+     if(data.hasOwnProperty(key) && typeof(data[key] == 'string')){
+        var replace = data[key];
+        var find = '{'+key+'}';
+        str = str.replace(find,replace);
+     }
+  }
+  return str;
 };
 
 // Get the contents of a static (public) asset

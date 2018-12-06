@@ -142,6 +142,7 @@ lib.findOne = function(dbName,dbCollection,data,callback){
     }
       else{
         var parsedData = helpers.parseJsonToObject(result);
+
         callback(false,parsedData);
       }
 
@@ -156,11 +157,12 @@ lib.insertOne = function(dbName,dbCollection,data,callback){
     if (!err) {
       var dbo = db.db(dbName);
 
-      dbo.collection(dbCollection).insertOne(data, function(err, result) {
+      dbo.collection(dbCollection).insertOne(data, function(err,res) {
         if (!err) {
-        callback(result);
+          console.log();
+        callback(false,res);
         console.log('-----------');
-        console.log(result);
+        console.log('inserted 1');
         console.log('-----------');
         db.close();
         }
