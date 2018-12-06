@@ -1,0 +1,133 @@
+initButtonsEvents(){
+  document.querySelector("#iddapaginahtml > p"); isso pega todas as tages p que sao filhos do id buttons porem apenas o primeiro que ele achar
+}
+para pegar todos os elementos usar querySelectorAll
+=========================================================
+
+criar um evento
+objeto.addEventListener('click', e =>{
+  codigo
+}); obs o addEventListener so pode ser adicionado a um elemento no caso se o elemento for uma lista
+
+objetoLista.forEach(btn=>{
+  btn.addEventListener('click',e =>{
+    codigo
+  })
+})
+=========================================================
+contrutor
+
+construtor(){
+  this._name = 'input'
+  this._id = 'id'
+}
+=========================================================
+pegar o nome da classe
+.className.baseVal
+
+=========================================================
+remover parte de uma string
+.replace("oqvairemover","") pode tbm ser usado para substituir como o proprio nome sugere
+=========================================================
+para multiplos eventos
+
+this.addEventListenerAll(objeto,'click drag', e =>{
+  codigo
+});
+
+addEventListenerAll(elemnt, events, fn){
+  events.split(' ').forEach(event =>{
+    element.addEventListener(event, fn, false);
+  })
+}
+
+obs: se a= "click drag" e usarmos a.split(' ')
+teremos um array ["click", "drag"]
+o false e para que o se apenas um evento seja disparado
+=========================================================
+mudar o formato do cursor do mouse
+.style.cursor = "pointer"; para ficar a maozinha
+=========================================================
+estrutura de controle de fluxo (switch)
+switch (expression) {
+  case expression:
+
+    break;
+  default:
+
+}
+=========================================================
+verificar se e um numero isNaN(valor)
+pegar o tamanho do array
+.length
+obs: index começa em zero
+
+.join() para juntar sem colocar a virgula (no caso de um array) a=[1,2,3] a.join("") retorna "123"
+obs: eval("var a = 10") cria uma variavel a com o valor igual a dez, ou seja, eval pode executar expressoes que estao armazenadas como texto.
+=========================================================
+operador ternario
+variavel = (valor) ? verdadeiro : falso;
+=========================================================
+a.split('').indexof('.')
+procura na variavel a pelo numero ponto senda separado o conteudo e transformado num array
+=========================================================
+case para mais de uma situação
+
+case '+':
+case '-':
+case '*':
+case '/':
+  funcao
+  break;
+=========================================================
+evento de teclado
+
+  document.addEventListener('keyUp', e=>{
+      console.log(e);
+  }); aqui monitoramos um evento que ocoorra na pagina (document) eventos keyUp, keyDown entre outros.
+=========================================================
+criar um input dinamicamente
+let input = document.createElement('input');
+colocar dentro do body
+document.body.appendChild(input);
+selecionar
+input.select();
+enviar para o sistema
+document.execCommand("Copy");
+para remover
+input.remove();
+=========================================================
+webapi
+audio
+=========================================================
+.innerHTML
+=========================================================
+try catch
+try {
+
+}catch(e){
+  console.log(e);
+}
+=========================================================
+<script src="index.js"></script>
+=========================================================
+dir(document) na console do navegador
+=========================================================
+let variavel = document.querySelector("#id");
+variavel.innerHTML = "4567";
+=========================================================
+dt = new Date();
+dt.getDate()
+17
+dt.getMonth();
+3
+dt.getFullYear();
+2018
+dt.toLocaleDateString("pt-br",{month:"long"})
+'abril'
+=========================================================
+setInterval
+função executada em um intervalo de tempo, tempo e marcado em milisegundos
+setInterval(()=>{
+ },1000);
+=========================================================

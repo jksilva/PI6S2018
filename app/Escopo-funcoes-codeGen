@@ -1,0 +1,26 @@
+Formato de arquivos -> .txt
+
+Linguagens:
+->Python
+->Java
+->Ruby
+->JavaScript
+
+Funções:
+->Abrir e ler arquivo (.txt)
+->Criar arquivo (.txt)
+->Elementos GUI:
+    ->Button
+    ->Painel
+    ->Textfield
+    ->Label
+->Conexão com BD:
+    ->Insert
+    ->Delete
+    ->Update
+    ->Query
+->Estrutura de dados
+->Calling Windows Runtime command (chamar programa do sistema)
+->Try.. Catch..
+->Variável universal (coringa //loops, whiles, if statement, switch)
+->
