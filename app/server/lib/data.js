@@ -159,12 +159,11 @@ lib.insertOne = function(dbName,dbCollection,data,callback){
 
       dbo.collection(dbCollection).insertOne(data, function(err,result) {
         if (!err) {
-          console.log(result.result);
-        callback(200);
-        console.log('-----------');
-        console.log('inserted 1');
-        console.log('-----------');
+          
+        
+        console.log('teste----->',result.result);
         db.close();
+        callback(200,result);
         }
         else{
           callback(500,'error to find data into mongobd collection');

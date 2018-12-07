@@ -28,10 +28,10 @@ function check(str,newIndex){
       if (i==(localDB.length-1)) {
         console.log(str,' not found');
         console.log(' trying to get on DB');
-        var value = findBlock(str);
-        localDB.push(value);
-        console.log("add ",value);
-        parameters.push([newIndex,localDB[localDB.length-1].name,localDB[localDB.length-1].variables]);
+        //var value = findBlock(str);
+        //localDB.push(value);
+        //console.log("add ",value);
+        //parameters.push([newIndex,localDB[localDB.length-1].name,localDB[localDB.length-1].variables]);
       }
 
     }
@@ -68,7 +68,8 @@ function drop(ev) {
       ev.target.appendChild(newData);
 
       // append to array
-      myArray.push(newData.id);
+      //myArray.push(newData.id);
+      arrayAdd(myArray, newData.id);
       check(newData.textContent,newData.id);
 
   }
@@ -149,7 +150,7 @@ function openNav(ev) {
 
 
 
-/* Set the width of the side navigation to 0 */
+//close the Nav
 function closeNav() {
     var navB = document.getElementById("mySidenav");
     //navB.removeChild(navB.lastChild);
@@ -179,44 +180,17 @@ function arrayRemove(arr, value) {
 
 }
 
-// function for do a post request with some payload, for get the token
-function postToken(emailAddress,password){
-axios.post('http://localhost:3000/tokens',{
- emailAddress:emailAddress,
- password:password
-}, {headers: {'Content-Type':'application/x-www-form-urlencoded'}})
-.then(function (response) {
-console.log(response);
-})
-.catch(function (error) {
-console.log(error);
-});
-}
-
-// function for register users
-function postUsers(fullName,emailAddress,password){
-axios.post('http://localhost:3000/users',{
- fullName:fullName,
- emailAddress:emailAddress,
- password:password
-}, {headers: {'Content-Type':'application/x-www-form-urlencoded'}})
-.then(function (response) {
-console.log(response);
-})
-.catch(function (error) {
-console.log(error);
-});
-}
-
-// function for find one block at db
-function findBlock(nameBlock){
-axios.post('http://localhost:3000/blocks',{
- nameBlock:nameBlock
-}, {headers: {'Content-Type':'application/x-www-form-urlencoded'}})
-.then(function (response) {
-return response;
-})
-.catch(function (error) {
-console.log(error);
-});
+//create a function to add a element
+function arrayAdd(arr, value){
+  // verify if alread exists
+  var indexArray = arr.lastIndexOf(value);
+  if( indexArray >-1){
+    console.log('overrided');
+    arr[indexArray] = value;
+    return arr;
+    
+  }else{
+    return arr.push(value);
+  }
+ 
 }

@@ -184,6 +184,8 @@ app.bindForms = function(){
 
         // Call the API
         app.client.request(undefined,path,method,queryStringObject,payload,function(statusCode,responsePayload){
+          var a = statusCode !== 200;
+          
           // Display an error on the form if needed
           if(statusCode !== 200){
 
@@ -205,6 +207,7 @@ app.bindForms = function(){
           } else {
             // If successful, send to form response processor
             app.formResponseProcessor(formId,payload,responsePayload);
+            
           }
 
         });
@@ -219,10 +222,13 @@ app.formResponseProcessor = function(formId,requestPayload,responsePayload){
   // If account creation was successful, try to immediately log the user in
   if(formId == 'accountCreate'){
     // Take the phone and password, and use it to log the user in
+
     var newPayload = {
-      'phone' : requestPayload.phone,
+      'email' : requestPayload.email,
       'password' : requestPayload.password
     };
+    console.log('-----------2----------',requestPayload.email);
+    console.log('-----------2----------',requestPayload.password);
 
     app.client.request(undefined,'api/tokens','POST',undefined,newPayload,function(newStatusCode,newResponsePayload){
       // Display an error on the form if needed
@@ -238,6 +244,7 @@ app.formResponseProcessor = function(formId,requestPayload,responsePayload){
         // If successful, set the token and redirect the user
         app.setSessionToken(newResponsePayload);
         window.location = '/checks/all';
+        
       }
     });
   }

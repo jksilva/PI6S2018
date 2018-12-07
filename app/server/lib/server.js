@@ -148,6 +148,7 @@ server.router = {
   'ping' : handlers.ping,
   'api/users' : handlers.users,
   'api/tokens' : handlers.tokens,
+  'checks/all' : handlers.checksList,
   'favicon.ico' : handlers.favicon,
   'public' : handlers.public
 };

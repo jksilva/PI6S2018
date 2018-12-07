@@ -58,7 +58,7 @@ handlers.accountCreate = function(data,callback){
       'body.class' : 'accountCreate'
     };
     // Read in a template as a string
-    helpers.getTemplate('accountCreate',templateData,function(err,str){
+    helpers.getTemplate('register',templateData,function(err,str){
       if(!err && str){
         // Add the universal header and footer
         helpers.addUniversalTemplates(str,templateData,function(err,str){
@@ -120,17 +120,17 @@ handlers.sessionDeleted = function(data,callback){
       'body.class' : 'sessionDeleted'
     };
     // Read in a template as a string
-    helpers.getTemplate('sessionDeleted',templateData,function(err,str){
+    helpers.getTemplate('workspace',templateData,function(err,str){
       if(!err && str){
         // Add the universal header and footer
-        helpers.addUniversalTemplates(str,templateData,function(err,str){
-          if(!err && str){
+       // helpers.addUniversalTemplates(str,templateData,function(err,str){
+       //   if(!err && str){
             // Return that page as HTML
             callback(200,str,'html');
-          } else {
-            callback(500,undefined,'html');
-          }
-        });
+       //   } else {
+           // callback(500,undefined,'html');
+          //}
+        
       } else {
         callback(500,undefined,'html');
       }
@@ -270,7 +270,8 @@ handlers._users.post = function(data,callback){
   var email = typeof(data.payload.email) == 'string' && data.payload.email.trim().length > 0 ? data.payload.email.trim() : false;
   var password = typeof(data.payload.password) == 'string' && data.payload.password.trim().length > 0 ? data.payload.password.trim() : false;
   var tosAgreement = typeof(data.payload.tosAgreement) == 'boolean' && data.payload.tosAgreement == true ? true : false;
-
+  
+  
   if(fullName && email && password && tosAgreement){
     // Make sure the user doesnt already exist
 
@@ -292,7 +293,7 @@ handlers._users.post = function(data,callback){
 
             if(!err && !data){
 
-              callback(200);
+              
 
               // salvar no banco
               var insertData = {fullName: userObject.fullName,
@@ -300,10 +301,10 @@ handlers._users.post = function(data,callback){
                 password:userObject.hashedPassword,
                 tosAgreement:userObject.tosAgreement};
                 console.log('insertdata ',insertData);
-              _data.insertOne('test','users',insertData,function(err){
 
-                if (!err) {
-                  console.log("aqui//??????????");
+              _data.insertOne('test','users',insertData,function(err,res){
+                console.log('---->',res);
+                if (err==200) {
                   console.log('user insert successfully');
                   callback(200);
                 }else {
@@ -477,12 +478,12 @@ handlers._tokens.delete = function(data,callback){
 };
 
 // Verify if a given token id is currently valid for a given user
-handlers._tokens.verifyToken = function(id,phone,callback){
+handlers._tokens.verifyToken = function(id,email,callback){
   // Lookup the token
   _data.read('tokens',id,function(err,tokenData){
     if(!err && tokenData){
       // Check that the token is for the given user and has not expired
-      if(tokenData.phone == phone && tokenData.expires > Date.now()){
+      if(tokenData.email == email && tokenData.expires > Date.now()){
         callback(true);
       } else {
         callback(false);
@@ -522,7 +523,7 @@ handlers._workspace.post = function(data,callback){
     // Get token from headers
     var token = typeof(data.headers.token) == 'string' ? data.headers.token : false;
 
-    // Lookup the user phone by reading the token
+    // Lookup the user email by reading the token
     _data.read('tokens',token,function(err,tokenData){
       if(!err && tokenData){
         var userPhone = tokenData.phone;
@@ -589,6 +590,37 @@ handlers._workspace.post = function(data,callback){
     callback(400,{'Error' : 'Missing required inputs, or inputs are invalid'});
   }
 };
+
+//project
+handlers.checksList = function(data,callback){
+  // Reject any request that isn't a GET
+  if(data.method == 'get'){
+    // Prepare data for interpolation
+    var templateData = {
+      'head.title' : 'Dashboard',
+      'body.class' : 'checksList'
+    };
+    // Read in a template as a string
+    helpers.getTemplate('workspace',templateData,function(err,str){
+      if(!err && str){
+        // Add the universal header and footer
+        helpers.addUniversalTemplates(str,templateData,function(err,str){
+          if(!err && str){
+            // Return that page as HTML
+            callback(200,str,'html');
+          } else {
+            callback(500,undefined,'html');
+          }
+        });
+      } else {
+        callback(500,undefined,'html');
+      }
+    });
+  } else {
+    callback(405,undefined,'html');
+  }
+};
+
 
 // Checks - get
 // Required data: id
